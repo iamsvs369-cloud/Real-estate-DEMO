@@ -1,0 +1,139 @@
+/* =========================================================
+   Homepage composition polish
+   Loaded after the shared shell so the home page can be composed
+   cleanly without affecting the other pages.
+   ========================================================= */
+body[data-page="home"] main{padding-top:0}
+
+body[data-page="home"] .hero{
+  height:720px!important;
+  min-height:720px!important;
+  max-height:720px!important;
+  border-radius:0!important;
+  isolation:isolate;
+}
+body[data-page="home"] .hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(90deg,rgba(5,27,25,.78) 0%,rgba(5,27,25,.48) 38%,rgba(5,27,25,.10) 70%,rgba(5,27,25,.04) 100%),
+    linear-gradient(0deg,rgba(3,17,16,.38),transparent 35%);
+  pointer-events:none;
+}
+body[data-page="home"] .hero-media{
+  z-index:0;
+  transform:scale(1.035);
+  object-position:center center;
+}
+body[data-page="home"] .hero-content{
+  position:absolute!important;
+  z-index:3!important;
+  left:0!important;
+  top:50%!important;
+  transform:translateY(-44%)!important;
+  width:var(--width)!important;
+  padding-top:0!important;
+}
+body[data-page="home"] .hero h1{
+  max-width:720px;
+  margin:0 0 26px;
+  font-size:clamp(58px,6.8vw,96px);
+  line-height:.9;
+  letter-spacing:-.045em;
+  text-wrap:balance;
+}
+body[data-page="home"] .hero-lead{max-width:430px;font-size:14px;line-height:1.7;margin-bottom:28px}
+body[data-page="home"] .hero-content .button{min-height:48px;padding:0 20px;font-size:11px}
+body[data-page="home"] .floating-gallery{
+  right:clamp(24px,5vw,72px)!important;
+  top:auto!important;
+  bottom:72px!important;
+  width:230px!important;
+  height:245px!important;
+  z-index:4!important;
+}
+body[data-page="home"] .float-main{
+  width:175px!important;height:215px!important;
+  right:0!important;top:0!important;
+  border-radius:16px!important;
+}
+body[data-page="home"] .float-small{
+  width:108px!important;height:142px!important;
+  left:0!important;bottom:0!important;
+  border-radius:14px!important;
+}
+body[data-page="home"] .hero-location{
+  left:var(--page-left,4.5%);
+  bottom:28px;
+  z-index:5;
+  font-size:10px;
+}
+
+/* Featured properties: intro + cards form one deliberate composition. */
+body[data-page="home"] .featured{
+  width:min(1240px,calc(100% - 64px));
+  display:grid;
+  grid-template-columns:minmax(210px,260px) minmax(0,1fr);
+  gap:clamp(36px,5vw,72px);
+  align-items:start;
+}
+body[data-page="home"] .featured-intro{padding-top:8px;max-width:245px}
+body[data-page="home"] .featured-intro h2{font-size:clamp(34px,3.4vw,46px);line-height:.98;letter-spacing:-.03em}
+body[data-page="home"] .featured-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+body[data-page="home"] .property-card{height:100%;display:flex;flex-direction:column}
+body[data-page="home"] .property-image{height:230px;flex:none}
+body[data-page="home"] .property-body{flex:1;display:flex;flex-direction:column;padding:18px 17px 20px}
+body[data-page="home"] .property-body h3{font-size:21px}
+body[data-page="home"] .property-body>p{font-size:11px}
+body[data-page="home"] .property-specs{font-size:10px;margin:15px 0}
+body[data-page="home"] .property-body>strong{margin-top:auto;font-size:21px}
+
+/* Pledge: keep copy and supporting points visually balanced. */
+body[data-page="home"] .pledge{min-height:470px}
+body[data-page="home"] .pledge-inner{min-height:470px}
+body[data-page="home"] .pledge-copy{width:40%;max-width:450px}
+body[data-page="home"] .pledge-points{width:53%;gap:20px}
+
+/* Solutions: give every card the same visual weight. */
+body[data-page="home"] .solutions{padding-top:var(--site-section-gap);padding-bottom:var(--site-section-gap)}
+body[data-page="home"] .solution-grid{gap:20px}
+body[data-page="home"] .solution-card{height:100%;display:flex;flex-direction:column}
+body[data-page="home"] .solution-card img{height:195px;flex:none}
+body[data-page="home"] .solution-card>div{min-height:94px;padding:16px 16px 18px}
+body[data-page="home"] .solution-card h3{font-size:19px}
+
+body[data-page="home"] .testimonials .page-width{max-width:1240px}
+body[data-page="home"] .final-cta{margin-top:0}
+
+@media(max-width:1050px){
+  body[data-page="home"] .floating-gallery{right:28px;transform:scale(.9);transform-origin:right bottom}
+  body[data-page="home"] .featured{grid-template-columns:1fr;gap:34px}
+  body[data-page="home"] .featured-intro{max-width:620px}
+  body[data-page="home"] .featured-intro>p:not(.eyebrow){max-width:480px}
+  body[data-page="home"] .property-image{height:220px}
+  body[data-page="home"] .solution-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:760px){
+  body[data-page="home"] .hero{height:560px!important;min-height:560px!important;max-height:560px!important}
+  body[data-page="home"] .hero-content{top:47%!important;transform:translateY(-40%)!important;width:calc(100% - 40px)!important}
+  body[data-page="home"] .hero h1{font-size:clamp(48px,12vw,72px);max-width:560px}
+  body[data-page="home"] .hero-lead{max-width:390px;font-size:13px}
+  body[data-page="home"] .floating-gallery{display:none}
+  body[data-page="home"] .hero-location{left:20px;bottom:22px}
+  body[data-page="home"] .featured{width:calc(100% - 40px);padding-top:58px!important;padding-bottom:58px!important}
+  body[data-page="home"] .featured-grid{grid-template-columns:1fr;gap:16px}
+  body[data-page="home"] .property-image{height:245px}
+  body[data-page="home"] .pledge{min-height:650px}
+  body[data-page="home"] .pledge-inner{min-height:650px;display:block;padding-top:72px;padding-bottom:58px}
+  body[data-page="home"] .pledge-copy{width:100%;max-width:560px}
+  body[data-page="home"] .pledge-points{width:100%;padding:44px 0 0;grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:520px){
+  body[data-page="home"] .solution-grid{grid-template-columns:1fr}
+  body[data-page="home"] .solution-card img{height:220px}
+  body[data-page="home"] .testimonial-heading h2{font-size:36px}
+}

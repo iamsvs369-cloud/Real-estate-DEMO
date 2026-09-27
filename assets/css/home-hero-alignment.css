@@ -1,0 +1,35 @@
+/* =========================================================
+   Home hero alignment — shared professional left edge
+   Matches the visual left padding used by the site's inner hero layouts.
+   ========================================================= */
+body[data-page="home"] .hero-content{
+  left:clamp(24px,6vw,88px)!important;
+  width:min(620px,calc(100% - clamp(48px,12vw,176px)))!important;
+  margin:0!important;
+  padding-left:0!important;
+  padding-right:0!important;
+}
+body[data-page="home"] .hero-location{
+  left:clamp(24px,6vw,88px)!important;
+}
+@media (max-width:1100px){
+  body[data-page="home"] .hero-content{
+    left:48px!important;
+    width:min(620px,calc(100% - 96px))!important;
+  }
+  body[data-page="home"] .hero-location{left:48px!important}
+}
+@media (max-width:760px){
+  body[data-page="home"] .hero-content{
+    left:20px!important;
+    width:calc(100% - 40px)!important;
+  }
+  body[data-page="home"] .hero-location{left:20px!important}
+}
+@media (max-width:560px){
+  body[data-page="home"] .hero-content{
+    left:20px!important;
+    width:calc(100% - 40px)!important;
+  }
+  body[data-page="home"] .hero-location{left:20px!important}
+}

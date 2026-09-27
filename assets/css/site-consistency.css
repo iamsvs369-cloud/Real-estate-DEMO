@@ -1,0 +1,232 @@
+/* =========================================================
+   Real Estate Demo — final site consistency layer
+   Shared shell measurements are deliberately centralized here.
+   ========================================================= */
+:root{
+  --site-forest:#062823;
+  --site-forest-2:#0b3530;
+  --site-cream:#f6f3ed;
+  --site-container:min(1240px,calc(100% - 64px));
+  --site-header-h:84px;
+  --site-section-gap:clamp(72px,7vw,108px);
+}
+
+/* ---------------- Header ---------------- */
+.site-header,
+.site-header.is-scrolled{
+  position:fixed!important;
+  inset:0 0 auto!important;
+  width:100%!important;
+  height:var(--site-header-h)!important;
+  padding:0 clamp(24px,4vw,64px)!important;
+  z-index:1000!important;
+  background:var(--site-forest)!important;
+  color:#fff!important;
+  border:0!important;
+  box-shadow:0 1px 0 rgba(255,255,255,.08)!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  transform:none!important;
+}
+
+.site-header .header-inner{
+  width:min(100%,1440px)!important;
+  max-width:none!important;
+  height:100%!important;
+  margin:0 auto!important;
+  display:grid!important;
+  grid-template-columns:minmax(205px,1fr) auto minmax(205px,1fr)!important;
+  align-items:center!important;
+  gap:clamp(20px,2.5vw,42px)!important;
+}
+
+.site-header .site-brand{
+  justify-self:start!important;
+  flex:none!important;
+  min-width:0!important;
+  display:inline-flex!important;
+  align-items:center!important;
+}
+
+.site-nav{
+  grid-column:2!important;
+  justify-self:center!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:clamp(22px,2.45vw,36px)!important;
+  margin:0!important;
+  flex:none!important;
+}
+.site-nav a{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  height:var(--site-header-h)!important;
+  min-height:0!important;
+  padding:0!important;
+  white-space:nowrap!important;
+  color:#fff!important;
+  font:500 13px/1 Inter,Arial,sans-serif!important;
+  letter-spacing:.01em!important;
+  opacity:.78;
+}
+.site-nav a::after{
+  bottom:22px!important;
+  height:1px!important;
+}
+
+.site-actions{
+  grid-column:3!important;
+  justify-self:end!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:12px!important;
+  margin:0!important;
+  flex:none!important;
+}
+.site-search{
+  width:42px!important;
+  height:42px!important;
+  padding:0!important;
+  display:grid!important;
+  place-items:center!important;
+  flex:0 0 42px!important;
+  color:#fff!important;
+  background:transparent!important;
+  border:1px solid rgba(255,255,255,.26)!important;
+  border-radius:50%!important;
+}
+.site-search svg{width:19px!important;height:19px!important;display:block!important}
+.site-search:hover{background:rgba(255,255,255,.08)!important;border-color:rgba(255,255,255,.48)!important}
+.site-cta{
+  min-height:42px!important;
+  height:42px!important;
+  padding:0 19px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:10px!important;
+  flex:0 0 auto!important;
+  color:#fff!important;
+  background:var(--site-forest-2)!important;
+  border:1px solid rgba(255,255,255,.35)!important;
+  border-radius:999px!important;
+  white-space:nowrap!important;
+  font:600 12px/1 Inter,Arial,sans-serif!important;
+  letter-spacing:.02em!important;
+}
+.site-cta:hover{background:#fff!important;color:var(--site-forest)!important;border-color:#fff!important}
+
+.site-header[style]{background:var(--site-forest)!important;backdrop-filter:none!important}
+
+/* ---------------- Mobile header ---------------- */
+.site-menu{
+  width:42px!important;height:42px!important;
+  display:none;
+  align-items:center!important;justify-content:center!important;
+  flex-direction:column!important;gap:5px!important;
+  border:1px solid rgba(255,255,255,.28)!important;
+  border-radius:50%!important;
+  background:transparent!important;color:#fff!important;
+}
+.mobile-panel{
+  background:var(--site-forest)!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+
+/* ---------------- Shared footer ---------------- */
+.site-footer{
+  background:var(--site-forest)!important;
+  color:#fff!important;
+  padding:clamp(64px,7vw,88px) clamp(24px,4vw,64px) 24px!important;
+}
+.site-footer .footer-inner,
+.site-footer .footer-bottom{
+  width:var(--site-container)!important;
+  max-width:none!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+.site-footer .footer-inner{
+  display:grid!important;
+  grid-template-columns:1.7fr 1fr 1.25fr 1fr!important;
+  gap:clamp(28px,4vw,56px)!important;
+  align-items:start!important;
+}
+.footer-social{display:flex!important;align-items:center!important;gap:10px!important}
+.footer-social a{
+  width:38px!important;height:38px!important;
+  display:grid!important;place-items:center!important;
+  padding:0!important;
+  border:1px solid rgba(255,255,255,.2)!important;
+  border-radius:50%!important;
+  background:transparent!important;color:#fff!important;
+}
+.footer-social a svg{width:17px!important;height:17px!important;display:block!important}
+.site-footer .footer-bottom{margin-top:56px!important;padding-top:20px!important}
+
+/* ---------------- Shared hero height ---------------- */
+.hero,.about-hero,.svc-hero-new,
+.svc-hero-panel,.properties-hero,.contact-hero{
+  height:720px!important;
+  min-height:720px!important;
+  max-height:720px!important;
+}
+body[data-page="services"] main{padding-top:0!important}
+
+/* ---------------- Vertical rhythm ---------------- */
+.featured{padding-top:var(--site-section-gap)!important;padding-bottom:var(--site-section-gap)!important}
+.testimonials{padding-top:var(--site-section-gap)!important;padding-bottom:var(--site-section-gap)!important}
+.svc-services-section,.svc-approach,.exclusive,.contact-main,.office{
+  padding-top:var(--site-section-gap)!important;
+  padding-bottom:var(--site-section-gap)!important;
+}
+.discovery{padding-top:32px!important}
+
+@media(max-width:1100px){
+  :root{--site-container:min(100%,calc(100% - 48px))}
+  .site-header{height:76px!important}
+  .site-header .header-inner{grid-template-columns:minmax(180px,1fr) auto minmax(180px,1fr)!important;gap:18px!important}
+  .site-nav{gap:20px!important}
+  .site-nav a{height:76px!important;font-size:12px!important}
+  .site-cta{padding:0 15px!important;font-size:11px!important}
+}
+
+@media(max-width:900px){
+  .site-header{height:72px!important;padding:0 24px!important}
+  .site-header .header-inner{display:flex!important;gap:0!important}
+  .site-nav,.site-actions .site-search,.site-actions .site-cta{display:none!important}
+  .site-actions{display:flex!important;margin-left:auto!important}
+  .site-menu{display:flex!important}
+  .hero,.about-hero,.svc-hero-new,.svc-hero-panel,.properties-hero,.contact-hero{
+    height:560px!important;min-height:560px!important;max-height:560px!important;
+  }
+  .site-footer{padding:56px 24px 20px!important}
+  .site-footer .footer-inner{grid-template-columns:1.5fr 1fr 1fr!important}
+  .site-footer .footer-bottom{margin-top:42px!important}
+  .featured,.section,.testimonials,.about-hero + .story,.journey + .values,.values + .team,
+  .svc-services-section,.svc-approach,.contact-main,.office,.exclusive{
+    padding-top:68px!important;padding-bottom:68px!important;
+  }
+}
+
+@media(max-width:560px){
+  :root{--site-container:calc(100% - 40px)}
+  .site-header{padding:0 20px!important}
+  .hero,.about-hero,.svc-hero-new,
+  .svc-hero-panel,.properties-hero,.contact-hero{
+    height:560px!important;min-height:560px!important;max-height:560px!important;
+  }
+  .site-footer{padding:52px 20px 18px!important}
+  .site-footer .footer-inner{grid-template-columns:1fr 1fr!important;gap:34px 22px!important}
+  .footer-brand-block{grid-column:1/-1!important}
+  .site-footer .footer-bottom{width:100%!important;flex-direction:column;align-items:flex-start;margin-top:38px!important}
+  .site-footer .footer-bottom div{gap:16px;flex-wrap:wrap}
+  .featured,.section,.testimonials,.about-hero + .story,.journey + .values,.values + .team,
+  .svc-services-section,.svc-approach,.contact-main,.office,.exclusive{
+    padding-top:58px!important;padding-bottom:58px!important;
+  }
+}
